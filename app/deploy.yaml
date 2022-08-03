@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postlisten
+  namespace: default
+  labels:
+    app: postlisten
+spec:
+  selector:
+    matchLabels:
+      app: postlisten
+  replicas: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: postlisten
+    spec:
+      # initContainers:
+        # Init containers are exactly like regular containers, except:
+          # - Init containers always run to completion.
+          # - Each init container must complete successfully before the next one starts.
+      containers:
+      - name: postlisten
+        image: nivamar/myaws
+        env:
+        ports:
+        - containerPort:  8080
+          name: postlisten
+      imagePullSecrets:
+      - name: regsecret
