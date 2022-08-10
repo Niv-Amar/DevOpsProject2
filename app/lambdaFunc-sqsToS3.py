@@ -28,4 +28,5 @@ def lambda_handler(event, context):
         for key in json_object.keys():
             f.write("%s, %s\n" % (key, json_object[key]))
 
-    bucket.upload_file('/tmp/message.csv','"'  + (time.strftime("%Y.%m.%d-%H:%M:%S")) + '-products-list.csv')
+#change the name of the file below!
+    bucket.upload_file('/tmp/message.csv','"'  + (time.strftime("%Y.%m.%d-%H:%M:%S")) + '<whatever you want>.csv')
