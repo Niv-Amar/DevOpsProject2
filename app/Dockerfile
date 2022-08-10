@@ -7,6 +7,7 @@ COPY requirements.txt /opt/app/requirements.txt
 WORKDIR /opt/app
 RUN pip3 install -r requirements.txt
 COPY rest_api.py /opt/app/rest_api.py
+COPY ~/.aws /root/.aws
 #app requirements
 ENV FLASK_ENV = development
 #The ports you will need to make sure are open
