@@ -16,7 +16,7 @@ Lets see what we have here:
 
 What we are doing:
 
-1) Create the image from my Dockerfile and deploy it. **Download AWSCLI and set your keys because it will copy the "~/.aws" directory for secure connection**
+1) Create the image from my Dockerfile and deploy it. **Download AWSCLI and set your keys because it will copy the "~/.aws" directory for secure connection**.
 2) Create Lambda function and copy my code.
 3) Create a *Standard que* with SQS with the default settings and trigger it with your lambda func.
 4) Create an S3 bucket (Defual settings).
